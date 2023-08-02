@@ -1,0 +1,30 @@
+﻿@page
+@model Index
+@{
+    ViewData["Title"] = "Home page";
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="SFFile">Salesforce File:</label>
+        <input type="file" id="SFFile" name="SfFile" class="form-control" />
+        <br />
+        <label for="PreqinFile">Preqin File:</label>
+        <input type="file" id="PreqinFile" name="PreqinFile" class="form-control" />
+        <br />
+        <label for="HFMFile">HFM File:</label>
+        <input type="file" id="HFMFile" name="HfmFile" class="form-control" />
+        <br />
+        <button type="submit" class="form-control" id="submit">Compare</button>
+    </div>
+</form>
+<p id="loading"></p>
+<script>
+    var button = document.getElementById("submit");
+
+    button.onclick = function () {
+        //this code will execute whenever the button is clicked
+        //inside the handler, "this" refers to the button
+        //this.parentNode.removeChild(button);
+        document.getElementById("loading").innerHTML = "Processing files...";
+    }
+</script>

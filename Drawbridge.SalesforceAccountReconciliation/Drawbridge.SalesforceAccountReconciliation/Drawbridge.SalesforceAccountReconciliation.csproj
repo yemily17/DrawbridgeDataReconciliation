@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6</TargetFramework>
+    <Company>Drawbridge Partners, LLC</Company>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);8034</NoWarn>
+  </PropertyGroup>
+
+  <Target Name="CopyXmlDocFiles" BeforeTargets="Build">
+    <ItemGroup>
+      <XmlDocFiles Include="%(Reference.RelativeDir)Drawbridge.*.xml" />
+    </ItemGroup>
+
+    <Message Text="Copying Drawbridge library xml documentation files to $(OutputPath)" Importance="High" />
+    <Copy SourceFiles="@(XmlDocFiles)" DestinationFolder="$(OutputPath)" Condition="Exists('%(RootDir)%(Directory)%(Filename)%(Extension)')" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="30.0.1" />
+    <PackageReference Include="Drawbridge.WebApi" Version="5.8.1-20230716.12" />
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.0.3" />
+    <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="config.json" />
+    <Content Remove="Schemas\addSample.json" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <EmbeddedResource Include="$(ProjectDir)\Schemas\*.*" />
+  </ItemGroup>
+
+</Project>

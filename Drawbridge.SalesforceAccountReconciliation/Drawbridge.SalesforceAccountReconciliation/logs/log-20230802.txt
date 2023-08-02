@@ -1,0 +1,152 @@
+2023-08-02 09:35:53.702 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 09:35:58.648 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 09:35:58.899 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 09:35:59.697 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 833.2189 ms
+ 2023-08-02 09:35:59.804 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 09:35:59.812 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 09:35:59.817 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 09:35:59.817 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 09:35:59.867 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 09:35:59.885 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/css/site.css?v=PZwVlv4EftiUlNVI7ASyygl-IOWaj1D2ixSxW6_wORE" responded 200 in 72.9753 ms
+ 2023-08-02 09:35:59.887 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0" responded 200 in 70.5913 ms
+ 2023-08-02 09:35:59.935 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/lib/jquery/dist/jquery.min.js" responded 200 in 118.6254 ms
+ 2023-08-02 09:35:59.938 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/lib/bootstrap/dist/js/bootstrap.bundle.min.js" responded 200 in 70.5294 ms
+ 2023-08-02 09:35:59.946 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/lib/bootstrap/dist/css/bootstrap.min.css" responded 200 in 141.6256 ms
+ 2023-08-02 09:36:00.053 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 09:36:00.192 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/favicon.ico" responded 200 in 139.5899 ms
+ 2023-08-02 09:38:06.576 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 09:38:10.438 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 09:38:10.648 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 09:38:10.912 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 292.0865 ms
+ 2023-08-02 09:39:04.768 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 33117ms
+ 2023-08-02 09:39:26.658 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 55008.5264 ms
+ 2023-08-02 10:13:36.747 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:13:41.067 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:13:41.319 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 2ms
+ 2023-08-02 10:17:31.959 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:17:34.544 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:17:34.747 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:29:47.926 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:29:51.738 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:29:51.972 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:35:43.637 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:35:47.538 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:35:47.736 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:35:48.046 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 337.2899 ms
+ 2023-08-02 10:36:27.495 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:36:27.515 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 20.3922 ms
+ 2023-08-02 10:36:28.795 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:36:28.801 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 5.6171 ms
+ 2023-08-02 10:36:37.797 [ERR] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Failed to execute middleware {middlewareName)
+Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): An operation was attempted on a nonexistent network connection. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadBufferAsync(CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadToEndAsyncInternal()
+   at Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware.InvokeAsync(HttpContext context, IServiceProvider serviceProvider, ILogger`1 logger)
+ 2023-08-02 10:36:37.994 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 27314ms
+ 2023-08-02 10:36:38.007 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 400 in 27326.8763 ms
+ 2023-08-02 10:36:41.495 [ERR] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Failed to execute middleware {middlewareName)
+Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): An operation was attempted on a nonexistent network connection. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadBufferAsync(CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadToEndAsyncInternal()
+   at Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware.InvokeAsync(HttpContext context, IServiceProvider serviceProvider, ILogger`1 logger)
+ 2023-08-02 10:36:41.520 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 3276ms
+ 2023-08-02 10:36:41.598 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 400 in 3355.4140 ms
+ 2023-08-02 10:40:08.077 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:40:11.854 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:40:12.099 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:40:12.375 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 338.7240 ms
+ 2023-08-02 10:41:12.148 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:41:12.167 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 19.0433 ms
+ 2023-08-02 10:41:13.911 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 38670ms
+ 2023-08-02 10:41:21.418 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:41:21.425 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 6.3133 ms
+ 2023-08-02 10:41:22.292 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:41:22.296 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 4.1695 ms
+ 2023-08-02 10:41:24.714 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:41:24.719 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 4.5005 ms
+ 2023-08-02 10:41:26.536 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:41:26.543 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 6.4659 ms
+ 2023-08-02 10:41:27.133 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:41:27.163 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 30.9319 ms
+ 2023-08-02 10:42:16.745 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:42:19.875 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:42:20.094 [WRN] MicroElements.Swashbuckle.FluentValidation.FluentValidationRules - ValidatorFactory is not provided. Please register FluentValidation.
+ 2023-08-02 10:42:20.099 [WRN] MicroElements.Swashbuckle.FluentValidation.FluentValidationRules - ValidatorFactory is not provided. Please register FluentValidation.
+ 2023-08-02 10:42:20.103 [WRN] MicroElements.Swashbuckle.FluentValidation.FluentValidationRules - ValidatorFactory is not provided. Please register FluentValidation.
+ 2023-08-02 10:42:24.642 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:42:24.848 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 221.4717 ms
+ 2023-08-02 10:43:17.407 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 33089ms
+ 2023-08-02 10:43:19.778 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:43:39.614 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 19835.2772 ms
+ 2023-08-02 10:44:10.099 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:44:12.448 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:44:12.653 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 1ms
+ 2023-08-02 10:44:12.859 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 228.6379 ms
+ 2023-08-02 10:44:39.932 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:46:24.653 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 104721.1294 ms
+ 2023-08-02 10:46:27.870 [ERR] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Failed to execute middleware {middlewareName)
+Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): An operation was attempted on a nonexistent network connection. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadBufferAsync(CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadToEndAsyncInternal()
+   at Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware.InvokeAsync(HttpContext context, IServiceProvider serviceProvider, ILogger`1 logger)
+ 2023-08-02 10:46:27.972 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 114238ms
+ 2023-08-02 10:46:27.990 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 400 in 114256.3047 ms
+ 2023-08-02 10:46:56.068 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:46:58.814 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:46:59.056 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 1ms
+ 2023-08-02 10:46:59.260 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 223.8584 ms
+ 2023-08-02 10:47:21.906 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:54:46.214 [INF] Drawbridge.WebApi.Bootstrapper - Starting web host
+ 2023-08-02 10:54:49.834 [INF] Drawbridge.WebApi.Extensions.ServiceCollectionExtensions - SwaggerGen: Adding xml comment files: C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.SalesforceAccountReconciliation.xml,C:\Users\eyin\source\repos\Drawbridge.SalesforceAccountReconciliation\Drawbridge.SalesforceAccountReconciliation\bin\Debug\net6\Drawbridge.WebApi.xml
+ 2023-08-02 10:54:50.084 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:54:50.336 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 200 in 269.0650 ms
+ 2023-08-02 10:55:23.097 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 0ms
+ 2023-08-02 10:55:45.275 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/Index?handler=Test" responded 200 in 22178.2109 ms
+ 2023-08-02 10:55:51.813 [ERR] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Failed to execute middleware {middlewareName)
+Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): An operation was attempted on a nonexistent network connection. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadBufferAsync(CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadToEndAsyncInternal()
+   at Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware.InvokeAsync(HttpContext context, IServiceProvider serviceProvider, ILogger`1 logger)
+ 2023-08-02 10:55:51.937 [INF] Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware - Middleware "AddAdditionalRequestTelemetryMiddleware" took 34418ms
+ 2023-08-02 10:55:51.954 [INF] Serilog.AspNetCore.RequestLoggingMiddleware - "0.0.0.1" - "https://localhost:44345/" responded 400 in 34434.7846 ms
+ 

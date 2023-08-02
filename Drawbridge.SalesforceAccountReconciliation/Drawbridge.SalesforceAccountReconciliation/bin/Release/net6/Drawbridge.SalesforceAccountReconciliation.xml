@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Drawbridge.SalesforceAccountReconciliation</name>
+    </assembly>
+    <members>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Configuration.SampleConfiguration">
+            <summary>
+            The sample configuration.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Configuration.SampleConfiguration.MaxAllowed">
+            <summary>
+            Gets or sets the max allowed samples.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Constants">
+            <summary>
+            Constant values used by the SF account reconciliation library
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.SfNameColumn">
+            <summary>
+            Column index of name field in Salesforce excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.SfWebsiteColumn">
+            <summary>
+            Column index of name field in HFM excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.SfEmailColumn1">
+            <summary>
+            Column index of name field in HFM excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.SfEmailColumn2">
+            <summary>
+            Column index of name field in HFM excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.PreqinNameColumn">
+            <summary>
+            Column index of name field in Preqin excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.HfmNameColumn">
+            <summary>
+            Column index of name field in HFM excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.PreqinWebsiteColumn">
+            <summary>
+            Column index of name field in HFM excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.PreqinEmailColumn">
+            <summary>
+            Column index of name field in HFM excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.HfmWebsiteColumn">
+            <summary>
+            Column index of name field in HFM excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.HfmEmailColumn">
+            <summary>
+            Column index of name field in HFM excel file
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.HfmMatchFileName">
+            <summary>
+            HFM match file name
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.PreqinMatchFileName">
+            <summary>
+            Preqin match file name
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.HfmCloseFileName">
+            <summary>
+            HFM close match file name
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.PreqinCloseFileName">
+            <summary>
+            Preqin close match file name
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.NoMatchFileName">
+            <summary>
+            No match file name
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.SfResultsFileName">
+            <summary>
+            Salesforce results file name
+            </summary>
+        </member>
+        <member name="F:Drawbridge.SalesforceAccountReconciliation.Constants.SfStandardHeader">
+            <summary>
+            Standard header section for Salesforce data
+            </summary>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Controllers.SamplesController">
+            <summary>
+            Sample controller.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Controllers.SamplesController.#ctor(Microsoft.Extensions.Options.IOptions{Drawbridge.SalesforceAccountReconciliation.Configuration.SampleConfiguration},Microsoft.Extensions.Logging.ILogger{Drawbridge.SalesforceAccountReconciliation.Controllers.SamplesController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.SalesforceAccountReconciliation.Controllers.SamplesController"/> class.
+            </summary>
+            <param name="sampleConfiguration">The sample configuration.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Controllers.SamplesController.GetAll">
+            <summary>
+            Gets all samples.
+            </summary>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult" />.</returns>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Controllers.SamplesController.Get(System.Int32)">
+            <summary>
+            Gets one sample.
+            </summary>
+            <param name="id">The sample id.</param>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult" />.</returns>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Controllers.SamplesController.Add(Drawbridge.SalesforceAccountReconciliation.Models.AddSampleRequest)">
+            <summary>
+            Adds a sample.
+            </summary>
+            <param name="request">The add sample request.</param>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult" />.</returns>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Models.AddSampleRequest">
+            <summary>
+            Contains data used to add a <see cref="T:Drawbridge.SalesforceAccountReconciliation.Models.Sample" />.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Models.AddSampleRequest.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Models.AddSampleRequest.Color">
+            <summary>
+            Gets or sets the color.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Models.Data.GetUserTokenDataParameter">
+            <summary>
+            Contains data used to add a <see cref="T:Drawbridge.SalesforceAccountReconciliation.Models.Data.GetUserTokenDataParameter" />.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Models.Data.GetUserTokenDataParameter._jwt">
+            <summary>
+            Gets or sets the JWT token.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Models.Sample">
+            <summary>
+            A Sample.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Models.Sample.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Models.Sample.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Models.Sample.Color">
+            <summary>
+            Gets or sets the color.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Pages.Error">
+            <summary>
+            Error logging
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Pages.Error.#ctor(Microsoft.Extensions.Logging.ILogger{Drawbridge.SalesforceAccountReconciliation.Pages.Error})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.SalesforceAccountReconciliation.Pages.Error"/> class.
+            </summary>
+            <param name="logger">logger</param>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Pages.Error.RequestId">
+            <summary>
+            Gets or sets RequestId
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Pages.Error.ShowRequestId">
+            <summary>
+            Gets a value indicating whether request ID is null or empty
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Pages.Error.OnGet">
+            <summary>
+            On get
+            </summary>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Pages.Index">
+            <summary>
+            Main page of web app
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Pages.Index.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.SalesforceAccountReconciliation.Pages.Index"/> class.
+            </summary>
+            <param name="webHostEnvironment">IWebHostEnvironment to use</param>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Pages.Index.SfFile">
+            <summary>
+            Gets or sets first file inputted from user
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Pages.Index.PreqinFile">
+            <summary>
+            Gets or sets second file inputted from user
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Pages.Index.HfmFile">
+            <summary>
+            Gets or sets third file inputted from user
+            </summary>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Pages.Index.ComparisonResult">
+            <summary>
+            Gets or sets comparison result
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Pages.Index.OnGet">
+            <summary>
+            Runs on get
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Pages.Index.OnPost">
+            <summary>
+            Runs when compare button clicked on UI
+            </summary>
+            <returns>zip folder containing 6 result csv files</returns>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Program">
+            <summary>
+            Entrypoint class for the application.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Program.Main(System.String[])">
+            <summary>
+            Entry point for the application.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>An integer return code.</returns>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Services.ReconciliationReportHelperService">
+            <summary>
+            Service for performing send grid health check requests.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Services.ReconciliationReportHelperService.BuildDataTable(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Converts an excel file into a DataTable
+            </summary>
+            <param name="fileName">name of file to parse</param>
+            <returns>DataTable representation of excel file</returns>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Services.ReconciliationReportHelperService.ToDictionary(System.Data.DataTable,System.Int32)">
+            <summary>
+            Converts DataTable object to dictionary
+            </summary>
+            <param name="dataTable">DataTable to convert into dictionary containing all orgs and associated data</param>
+            <param name="nameColumnIndex">Column in DataTable that contains each organization's name</param>
+            <returns>Dictionary with key for organization name and value for all associated data</returns>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Services.ReconciliationReportHelperService.FindMatches(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}})">
+            <summary>
+            Performs exact matching and fuzzy matching between Salesforce, Preqin, and HFM
+            </summary>
+            <param name="sfNames">Dictionary with values of each organization's name, and keys of all rows of data associated from Salesforce</param>
+            <param name="preqinNames">Dictionary with values of each organization's name, and keys of all rows of data associated from Preqin</param>
+            <param name="hfmNames">Dictionary with values of each organization's name, and keys of all rows of data associated from HFM</param>
+            <returns>List of 6 lists of data: Preqin exact matches, HFM exact matches, Preqin fuzzy matches, HFM fuzzy matches, all orgs that didn't match, and Salesforce data with a column at the front indicating which list each organization in Salesforce mapped to</returns>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Services.ReconciliationReportHelperService.MakeHeader(System.Data.DataTable,System.String)">
+            <summary>
+            Creates file header based on old file header
+            </summary>
+            <param name="file">old file</param>
+            <param name="headerStart">new columns of file header (appended to start)</param>
+            <returns>csv format file header</returns>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Services.StringHelperService">
+            <summary>
+            Helper functions for string parsing
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Services.StringHelperService.ToFuzzy(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}},System.Int32,System.Int32)">
+            <summary>
+            Creates a new dictionary that replaces each key with new organization name from website or email
+            </summary>
+            <param name="searchDict">Dictionary to grab data from</param>
+            <param name="websiteIndex">Column index of each organization's website</param>
+            <param name="emailIndex">Column index of each organization's email</param>
+            <returns>New dictionary with same values as searchDict but keys replaced with names parsed from website or email</returns>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Services.StringHelperService.WordMatches(System.String,System.String)">
+            <summary>
+            Finds all words common to string1 and string2
+            </summary>
+            <param name="string1">first string to compare</param>
+            <param name="string2">second string to compare</param>
+            <returns>List of all words found in string1 and string2</returns>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Services.StringHelperService.ParseDomainNameFromEmail(System.String)">
+            <summary>
+            Attempts to parse organization name from email
+            </summary>
+            <param name="email">email to parse</param>
+            <returns>name parsed from email, or empty string if no email exists/name cannot be parsed</returns>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Services.StringHelperService.ParseDomainNameFromWebsite(System.String)">
+            <summary>
+            Attempts to parse organization name from website
+            </summary>
+            <param name="website">website to parse</param>
+            <returns>name parsed from website, or empty string if no website exists/name cannot be parsed</returns>
+        </member>
+        <member name="T:Drawbridge.SalesforceAccountReconciliation.Startup">
+            <summary>
+            The startup class used to configure the application.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.SalesforceAccountReconciliation.Startup"/> class.
+            </summary>
+            <param name="env">The environment.</param>
+        </member>
+        <member name="P:Drawbridge.SalesforceAccountReconciliation.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services for the application.
+            </summary>
+            <param name="services">The service collection to configure.</param>
+        </member>
+        <member name="M:Drawbridge.SalesforceAccountReconciliation.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the application.
+            </summary>
+            <param name="app">The application builder.</param>
+            <param name="env">The environment.</param>
+        </member>
+    </members>
+</doc>

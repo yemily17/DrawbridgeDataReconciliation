@@ -1,0 +1,1621 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Drawbridge.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Drawbridge.WebApi.Authentication.ApiKeyAuthenticationHandler">
+            <summary>
+            Api key authentication handler that checks the X-API-KEY header for a matching configured key.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.ApiKeyAuthenticationHandler.#ctor(System.IServiceProvider,Microsoft.Extensions.Options.IOptionsMonitor{Drawbridge.WebApi.Authentication.ApiKeyAuthenticationOptions},Microsoft.Extensions.Logging.ILoggerFactory,System.Text.Encodings.Web.UrlEncoder,Microsoft.AspNetCore.Authentication.ISystemClock)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Authentication.ApiKeyAuthenticationHandler"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider</param>
+            <param name="options">The configuration options.</param>
+            <param name="logger">The logger factory.</param>
+            <param name="encoder">The url encoder.</param>
+            <param name="clock">The system clock.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.ApiKeyAuthenticationHandler.HandleAuthenticateAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.ApiKeyAuthenticationOptions">
+            <summary>
+            Options for api key authentication.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.ApiTokenAuthenticationHandler">
+            <summary>
+            Authentication handler for API Token.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.ApiTokenAuthenticationHandler.#ctor(System.IServiceProvider,Microsoft.Extensions.Options.IOptionsMonitor{Drawbridge.WebApi.Authentication.ApiTokenAuthenticationOptions},Microsoft.Extensions.Logging.ILoggerFactory,System.Text.Encodings.Web.UrlEncoder,Microsoft.AspNetCore.Authentication.ISystemClock)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Authentication.ApiTokenAuthenticationHandler"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider</param>
+            <param name="options">The configuration options.</param>
+            <param name="logger">The logger factory.</param>
+            <param name="encoder">The url encoder.</param>
+            <param name="clock">The system clock.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.ApiTokenAuthenticationHandler.HandleAuthenticateAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.ApiTokenAuthenticationOptions">
+            <summary>
+            Authentication options for API Token Authentication.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Authentication.ApiTokenAuthenticationOptions.ApiToken">
+            <summary>
+            Gets or sets the ApiToken.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.ApiTokenAuthenticationOptions.Validate">
+            <inheritdoc />
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.ClientPortalUserClaimsBuilder">
+            <summary>
+            Helper class for building a claims principal for a <see cref="T:Drawbridge.WebApi.Models.Authentication.ClientPortalUser" />.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.ClientPortalUserClaimsBuilder.BuildClaims(Drawbridge.WebApi.Client.IAuthServClient,System.IdentityModel.Tokens.Jwt.JwtSecurityToken,System.String,Drawbridge.WebApi.Authentication.TokenAuthenticationOptions)">
+            <summary>
+            Builds the claims for the user.
+            </summary>
+            <param name="authServClient">The httpClient to extract the token user and get user details.</param>
+            <param name="jwt">The jwt.</param>
+            <param name="issuerName">The issuer name for the claims.</param>
+            <param name="options">The token configuration options.</param>
+            <returns>A task that results in a collection of <see cref="T:System.Security.Claims.Claim" />.</returns>
+            <exception cref="T:Drawbridge.WebApi.Models.Authentication.AuthenticationMiddlewareException">Throws when there is an issue when building the claims principal.</exception>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.IApiKeyValidator">
+            <summary>
+            Interface for validating apiKey.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.IApiKeyValidator.Validate(System.String)">
+            <summary>
+            Checks if apiKey is valid.
+            </summary>
+            <param name="apiKey">The apiKey to be verified.</param>
+            <returns>A task that returns if the apiKey is valid.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.ITokenUserExtractor">
+            <summary>
+            Interface for extracting a user from a token.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.ITokenUserExtractor.AddAccountAndOrgDetails(Drawbridge.WebApi.Models.Authentication.ClientPortalUser,System.String)">
+            <summary>
+            Gets a user from a token.
+            </summary>
+            <param name="user">The initial user with basic information.</param>
+            <param name="token">The token.</param>
+            <returns>A task that returns the client portal user.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.SchemeNames">
+            <summary>
+            Scheme name constants.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authentication.SchemeNames.ApiKey">
+            <summary>
+            Api key authentication scheme.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authentication.SchemeNames.TokenInBody">
+            <summary>
+            Token in body authentication scheme.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authentication.SchemeNames.TokenInHeader">
+            <summary>
+            Token in header authentication scheme.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authentication.SchemeNames.AzureAD">
+            <summary>
+            The AzureAD policy name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authentication.SchemeNames.ApiToken">
+            <summary>
+            Api token authentication scheme.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.TokenAuthenticationOptions">
+            <summary>
+            Options for token authentication.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Authentication.TokenAuthenticationOptions.SigningKey">
+            <summary>
+            Gets or sets the signing key for the jwt.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Authentication.TokenAuthenticationOptions.DrawbridgeAdminOrgID">
+            <summary>
+            Gets or sets the drawbridge admin org id if configured
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.TokenAuthenticationOptions.Validate">
+            <inheritdoc />
+        </member>
+        <member name="T:Drawbridge.WebApi.Authentication.TokenInHeaderAuthenticationHandler">
+            <summary>
+            Api key authentication handler that checks the Authorization header for the token property and validates it.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.TokenInHeaderAuthenticationHandler.#ctor(System.IServiceProvider,Microsoft.Extensions.Options.IOptionsMonitor{Drawbridge.WebApi.Authentication.TokenAuthenticationOptions},Microsoft.Extensions.Logging.ILoggerFactory,System.Text.Encodings.Web.UrlEncoder,Microsoft.AspNetCore.Authentication.ISystemClock)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Authentication.TokenInHeaderAuthenticationHandler"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider for getting dependencies.</param>
+            <param name="options">The configuration options.</param>
+            <param name="logger">The logger factory.</param>
+            <param name="encoder">The url encoder.</param>
+            <param name="clock">The system clock.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authentication.TokenInHeaderAuthenticationHandler.HandleAuthenticateAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Drawbridge.WebApi.Authorization.ApiKeyAuthorizationHandler">
+            <summary>
+            Handles authorization by a specified api key requirement.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authorization.ApiKeyAuthorizationHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Authorization.ApiKeyAuthorizationHandler})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Authorization.ApiKeyAuthorizationHandler"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authorization.ApiKeyAuthorizationHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Drawbridge.WebApi.Authorization.ApiKeyRequirement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authorization.ApiKeyRequirement">
+            <summary>
+            Authorization requirement based on the api key.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authorization.ApiTokenAuthorizationHandler">
+            <summary>
+            Handles authorization by a specified api token requirement.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authorization.ApiTokenAuthorizationHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Authorization.ApiTokenAuthorizationHandler})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Authorization.ApiTokenAuthorizationHandler"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authorization.ApiTokenAuthorizationHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Drawbridge.WebApi.Authorization.ApiTokenRequirement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authorization.ApiTokenRequirement">
+            <summary>
+            Authorization requirement based on the api token.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authorization.PolicyNames">
+            <summary>
+            Policy name constants.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authorization.PolicyNames.ApiKey">
+            <summary>
+            The Api key policy name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authorization.PolicyNames.TokenInBody">
+            <summary>
+            The TokenInBody policy name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authorization.PolicyNames.TokenInHeader">
+            <summary>
+            The TokenInHeader policy name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authorization.PolicyNames.AzureAD">
+            <summary>
+            The AzureAD policy name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authorization.PolicyNames.ApiToken">
+            <summary>
+            The Api token policy name.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authorization.RoleNames">
+            <summary>
+            Role name constants.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authorization.RoleNames.Admin">
+            <summary>
+            The Admin role name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Authorization.RoleNames.DrawbridgeAdminOrgMember">
+            <summary>
+            The DrawbridgeAdminOrgMember role name.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authorization.TokenAuthorizationHandler">
+            <summary>
+            Handles authorization by a specified client portal token.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authorization.TokenAuthorizationHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Authorization.TokenAuthorizationHandler})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Authorization.TokenAuthorizationHandler"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Authorization.TokenAuthorizationHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Drawbridge.WebApi.Authorization.TokenRequirement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Drawbridge.WebApi.Authorization.TokenRequirement">
+            <summary>
+            Authorization requirement based on the token.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Bootstrapper">
+            <summary>
+            Helper class for bootstrapping an application.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Bootstrapper.RunApplication(System.String[],System.Type)">
+            <summary>
+            Runs the application.
+            </summary>
+            <param name="args">The arguments.</param>
+            <param name="startupType">The type of the startup class.</param>
+            <returns>An integer return code.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Bootstrapper.CreateHostBuilder(System.String[],System.Type)">
+            <summary>
+            Creates the host builder with logging and defaults.
+            </summary>
+            <param name="args">The arguments.</param>
+            <param name="startupType">The type of the startup class.</param>
+            <returns>The host builder.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Client.AuthServClient">
+            <summary>
+            Implementation class for IAuthServClient.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Client.AuthServClient.#ctor(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions{Drawbridge.WebApi.Models.Configuration.DrawbridgeAuthenticationConfiguration},Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Client.AuthServClient})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Client.AuthServClient"/> class.
+            </summary>
+            <param name="client">The client.</param>
+            <param name="authenticationOptions">The authenticationOptions.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="P:Drawbridge.WebApi.Client.AuthServClient.Client">
+            <summary>
+            Gets the http client.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Client.AuthServClient.GetUserInfo(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Drawbridge.WebApi.Client.IAuthServClient">
+            <summary>
+            Interface for authServClient.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Client.IAuthServClient.GetUserInfo(System.String)">
+            <summary>
+            API Client method to get the user login info.
+            </summary>
+            <param name="token">The jwt token.</param>
+            <returns>A Task with CallResult of <see cref="T:Drawbridge.WebApi.Models.Response.AuthServLoginInfoResponse"/>.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Configuration.AppConfigurationBuilder">
+            <summary>
+            Helper class for building application configuration.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.AppConfigurationBuilder.Build(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Builds application configuration.
+            </summary>
+            <param name="env">The hosting environment.</param>
+            <returns>The built configuration.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Configuration.DBEnvironmentSettings">
+            <summary>
+            Helper class for environment settings
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.DBEnvironmentSettings.GetAppName">
+            <summary>
+            Gets the app name
+            </summary>
+            <returns>The app name</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.DBEnvironmentSettings.GetDBEnv">
+            <summary>
+            Gets the DB_ENV
+            </summary>
+            <returns>The DB_ENV</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.DBEnvironmentSettings.GetAzureAppConfigurationUri">
+            <summary>
+            Gets the Azure App Configuration uri
+            </summary>
+            <returns>The Azure App Configuration Connection String</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.DBEnvironmentSettings.GetAzureKeyVaultSharedUri">
+            <summary>
+            Gets the Azure Key Vault Shared uri
+            </summary>
+            <returns>The Azure Key Vault uri</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.DBEnvironmentSettings.GetAzureKeyVaultAppUri">
+            <summary>
+            Gets the Azure Key Vault App uri
+            </summary>
+            <returns>The Azure Key Vault uri</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.DBEnvironmentSettings.GetWebsiteSiteName">
+            <summary>
+            Gets the website site name
+            </summary>
+            <returns>The website site name</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.DBEnvironmentSettings.GetHostBaseUrl">
+            <summary>
+            Gets the base url for the host
+            </summary>
+            <returns>The host base url</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Configuration.DBEnvironmentSettings.IsLogToFileEnabled">
+            <summary>
+            Gets whether or not log to file is enabled
+            </summary>
+            <returns>Whether or not log to file is enabled</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2">
+            <summary>
+            Base class for entity data access controllers
+            </summary>
+            <typeparam name="TEntity">The entity type</typeparam>
+            <typeparam name="TEntityFilter">The entity filter</typeparam>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2.#ctor(FluentValidation.IValidator{`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2"/> class.
+            </summary>
+            <param name="validator">The validator</param>
+        </member>
+        <member name="P:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2.Validator">
+            <summary>
+            Gets the validator
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2.GetMutiple(`1)">
+            <summary>
+            Gets a list of the entity using the provided filter
+            </summary>
+            <param name="filter">The filter object</param>
+            <returns>An action result</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2.GetByID(System.String)">
+            <summary>
+            Gets one entity using the provided entity identifier
+            </summary>
+            <param name="id">The entity identifier</param>
+            <returns>An action result</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2.Create(`0)">
+            <summary>
+            Creates an entity
+            </summary>
+            <param name="entity">The entity</param>
+            <returns>An action result</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2.Update(System.String,`0)">
+            <summary>
+            Updates an entity
+            </summary>
+            <param name="id">The entity identifier</param>
+            <param name="entity">The entity</param>
+            <returns>An action result</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2.Delete(System.String)">
+            <summary>
+            Deletes an entity
+            </summary>
+            <param name="id">The entity identifier</param>
+            <returns>An action result</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.BaseEntityDataAccessController`2.Get(`1)">
+            <summary>
+            Gets a list of the entity using the provided filter to be used when validation passes
+            </summary>
+            <param name="filter">The filter object</param>
+            <returns>An action result></returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Controllers.HealthController">
+            <summary>
+            Health controller.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.HealthController.#ctor(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService,Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Controllers.HealthController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Controllers.HealthController"/> class.
+            </summary>
+            <param name="healthCheckService">The health check service provided by ASP.NET core.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.HealthController.Get">
+            <summary>
+            Gets health checks.
+            </summary>
+            <returns>An status code result - 200 for healthy, 500 for unhealthy/degraded.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Controllers.HealthReportController">
+            <summary>
+            Health report controller.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.HealthReportController.#ctor(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService,Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Controllers.HealthReportController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Controllers.HealthReportController"/> class.
+            </summary>
+            <param name="healthCheckService">The health check service provided by ASP.NET core.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.HealthReportController.Get">
+            <summary>
+            Gets health checks report.
+            </summary>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult" />.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Controllers.LivenessController">
+            <summary>
+            Heartbeat controller.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.LivenessController.#ctor(Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Controllers.LivenessController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Controllers.LivenessController"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Controllers.LivenessController.Get">
+            <summary>
+            Gets liveness response.
+            </summary>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult" />.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.ApplicationBuilderExtensions">
+            <summary>
+            Extension methods for configuring the application builder.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ApplicationBuilderExtensions.UseDefaults(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,System.Reflection.Assembly)">
+            <summary>
+            Sets up the default appplication settings including dev tools, logging, and other middleware.
+            </summary>
+            <param name="app">The application builder.</param>
+            <param name="env">The hosting environment.</param>
+            <param name="assembly">The assembly of the application being configured.</param>
+            <returns>The modified application builder.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ApplicationBuilderExtensions.AddExceptionHandling(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures exception handling.
+            </summary>
+            <param name="app">The application builder.</param>
+            <param name="env">The hosting environment.</param>
+            <returns>The modified application builder.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ApplicationBuilderExtensions.UseDevTools(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Reflection.Assembly)">
+            <summary>
+            Configures dev tools including swagger and mini profiler.
+            </summary>
+            <param name="app">The application builder.</param>
+            <param name="assembly">The assembly of the application being configured.</param>
+            <returns>The modified application builder.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.ClaimsPrincipalExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Security.Claims.ClaimsPrincipal" />.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ClaimsPrincipalExtensions.ToClientPortalUser(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Gets a <see cref="T:Drawbridge.WebApi.Models.Authentication.ClientPortalUser" /> from a <see cref="T:System.Security.Claims.ClaimsPrincipal" />.
+            </summary>
+            <param name="user">The claims principal.</param>
+            <returns>The client portal user.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ClaimsPrincipalExtensions.IsClientPortalUser(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Gets a value indicating whether or not the user is a <see cref="T:Drawbridge.WebApi.Models.Authentication.ClientPortalUser"/>
+            </summary>
+            <param name="user">The claims principal</param>
+            <returns>True if the user is a <see cref="T:Drawbridge.WebApi.Models.Authentication.ClientPortalUser"/>, otherwise false</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ClaimsPrincipalExtensions.GetRoles(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Gets the roles for a user.
+            </summary>
+            <param name="user">The claims principal</param>
+            <returns>The roles for a user</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.ConfigurationBuilderExtensions">
+            <summary>
+            Extensions for configuration builder
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Extensions.ConfigurationBuilderExtensions.SharedSecretClient">
+            <summary>
+            Gets or sets the shared secret client
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Extensions.ConfigurationBuilderExtensions.AppSecretClient">
+            <summary>
+            Gets or sets the app secret client
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ConfigurationBuilderExtensions.BuildDefaultConfiguration(Microsoft.Extensions.Configuration.IConfigurationBuilder,System.String)">
+            <summary>
+            Builds defaut configuration
+            </summary>
+            <param name="builder">The configuration builder</param>
+            <param name="basePath">The base path</param>
+            <returns>The configuration as an <see cref="T:Microsoft.Extensions.Configuration.IConfigurationRoot"/></returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ConfigurationBuilderExtensions.SecretResolver(System.Uri)">
+            <summary>
+            Key Vault secret resolver
+            </summary>
+            <param name="identifier">The secret identifier</param>
+            <returns>The secret</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.HostBuilderExtensions">
+            <summary>
+            Extension methods for the host builder.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.HostBuilderExtensions.AddLogging(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+            Configures logging.
+            </summary>
+            <param name="builder">The host builder.</param>
+            <returns>The modified host builder.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.HttpRequestExtensions">
+            <summary>
+            Extension methods for http requests.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.HttpRequestExtensions.GetRawBodyAsync(Microsoft.AspNetCore.Http.HttpRequest,System.Text.Encoding)">
+            <summary>
+            Gets the raw body of the request.
+            </summary>
+            <param name="request">The http request.</param>
+            <param name="encoding">The encoding format.</param>
+            <returns>A task resulting in the body in string format.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.HttpRequestExtensions.GetAuthorizationHeaderValue(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the authorization header value.
+            </summary>
+            <param name="request">The http request.</param>
+            <returns>A string of the raw jwt token.</returns>
+            <exception cref="T:System.ArgumentNullException">Throws when the http request is null.</exception>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.JsonSerializerOptionsExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Text.Json.JsonSerializerOptions"/>
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.JsonSerializerOptionsExtensions.WithDefaults(System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Sets up the the default serializer options
+            </summary>
+            <param name="options">An instance of <see cref="T:System.Text.Json.JsonSerializerOptions"/></param>
+            <returns>The default serializer options</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.JsonSerializerSettingsExtensions">
+            <summary>
+            Extension methods for <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.JsonSerializerSettingsExtensions.WithDefaults(Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Sets up the the default serializer options
+            </summary>
+            <param name="settings">An instance of <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/></param>
+            <returns>The default serializer options</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.RuleBuilderOptionsExtensions">
+            <summary>
+            Extension methods for rule builder
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.RuleBuilderOptionsExtensions.WithJsonSchemaMessage``2(FluentValidation.IRuleBuilderOptions{``0,``1},NJsonSchema.Validation.ValidationErrorKind)">
+            <summary>
+            Specifies a custom error message to use when validation fails using NJsonSchema errors.
+            </summary>
+            <param name="rule">The current rule</param>
+            <param name="errorType">The type of <see cref="T:NJsonSchema.Validation.ValidationErrorKind"/></param>
+            <typeparam name="T">The type to be validated</typeparam>
+            <typeparam name="TProperty">The property being validated</typeparam>
+            <returns>The modified rule builder</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.RuleBuilderOptionsExtensions.WithErrorTypeMessage``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Enum)">
+            <summary>
+            Specifies a custom error message to use when validation fails using an enumeration of error types.
+            </summary>
+            <param name="rule">The current rule</param>
+            <param name="errorType">The type of error from an enum</param>
+            <typeparam name="T">The type to be validated</typeparam>
+            <typeparam name="TProperty">The property being validated</typeparam>
+            <returns>The modified rule builder</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions methods for configuring services.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddDefaults(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Sets up service defaults including dev tools, model binding exception handling, validation and health checks.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="assembly">The assembly of the application being configured.</param>
+            <param name="configuration">The application configuration.</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddModelBindingExceptionHandling(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Sets up model bining exception handling for when the request fails before controllers can process it.
+            </summary>
+            <param name="services">The service collection.</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddControllersWithValidation(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly)">
+            <summary>
+            Sets up controllers and validation using fluent validation and adds health and heartbeat endpoints.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="assembly">The assembly of the application being configured.</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddApiKeyAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds authorization using api keys.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="configuration">The application configuration.</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddDrawbridgeAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Boolean,System.Boolean)">
+            <summary>
+            Adds drawbridge jwt auth and api token auth (configurable to turn off either).
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="configuration">The application configuration.</param>
+            <param name="enableUserAuth">Whether or not to enable user auth - defaults to true.</param>
+            <param name="enableApiTokenAuth">Whether or not to enable api token auth - defaults to true</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddApiTokenAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds authorization using the api token.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="configuration">The application configuration.</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddAzureIdentity(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds azure identity authentication support
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="configuration">The application configuration.</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddDevTools(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly)">
+            <summary>
+            Sets up dev tools including swagger and mini profiler.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="assembly">The assembly of the application being configured.</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.ServiceCollectionExtensions.AddTelemetry(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Sets up telemetry with Application Insights.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="configuration">The application configuration.</param>
+            <returns>The modified service collection.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Extensions.TelemetryConfigurationExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration" />.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Extensions.TelemetryConfigurationExtensions.SetConnectionString(Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration,System.String)">
+            <summary>
+            Sets the ApplictionInsights connection string to a valid value.
+            </summary>
+            <param name="configuration">The current configuration.</param>
+            <param name="connectionString">The provided connection string.</param>
+            <returns>The modified configuraton.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter">
+            <summary>
+            Resource filter for validating JSON input with schema.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter"/> class.
+            </summary>
+            <param name="schemaPath">The schema file name or path.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter"/> class.
+            </summary>
+            <param name="schemaPath">The schema file name with optional directory.</param>
+            <param name="assemblyName">The assembly name.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter.OnResourceExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ResourceExecutionDelegate)">
+            <summary>
+            Executes the resource filter. Called before execution of the remainder of the pipeline.
+            </summary>
+            <param name="context">The resource executing context.</param>
+            <param name="next">The resource execution delegate.</param>
+            <returns>A task that completes when remainder of the pipeline completes.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter.ValidateRequestAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Validates a request body with the JSON schema.
+            </summary>
+            <param name="context">The http context.</param>
+            <returns>An instance of a <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> or <see langword="null"/>.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter.GetResult(System.IO.Stream,NJsonSchema.JsonSchema)">
+            <summary>
+            Gets the result of the validation.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="schema">The schema.</param>
+            <returns>An instance of a <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/>.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter.GetSchema">
+            <summary>
+            Gets the json schema for the schema name.
+            </summary>
+            <returns>A <see cref="T:NJsonSchema.JsonSchema"/>.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter.ReferenceResolverFactory(NJsonSchema.JsonSchema)">
+            <summary>
+            Resolves schema references outside of relative path.
+            Use <see cref="M:NJsonSchema.JsonReferenceResolver.AddDocumentReference(System.String,NJsonSchema.References.IJsonReference)"/>
+            to add schema reference.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Helpers.JsonSchemaValidator">
+            <summary>
+            Helper class for validating json schema outside of the <see cref="T:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter"/>
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Helpers.JsonSchemaValidator.ValidateJsonSchema(System.String,System.IO.Stream,System.String)">
+            <summary>
+            Validates a json schema and sets the ActionContext if there is a validation error
+            </summary>
+            <param name="schemaPath">The schema path</param>
+            <param name="jsonData">The json in a stream</param>
+            <param name="assemblyName">The assembly name</param>
+            <returns>A Task that indicates the completion status</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Helpers.PathBuilder">
+            <summary>
+            Helper class for generating paths.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Helpers.PathBuilder.ValidationErrorSeparator">
+            <summary>
+            Path separator for validation error.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Helpers.PathBuilder.ValidationErrorBasePath">
+            <summary>
+            Base path for validation error.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Helpers.PathBuilder.GenerateValidationErrorPath(System.String[])">
+            <summary>
+            Generates the property path for validation error.
+            </summary>
+            <param name="segments">The path segments.</param>
+            <returns>The property path.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="segments"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Value in <paramref name="segments"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="T:Drawbridge.WebApi.Helpers.ValidationHelper">
+            <summary>
+            Helper methods for building validation errors
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Helpers.ValidationHelper.AddValidationError(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.ICollection{System.String}},System.String,System.String)">
+            <summary>
+            Adds a validation error to the dictionary of existing errors
+            </summary>
+            <param name="errors">The dictionary of existing errors</param>
+            <param name="key">The error key</param>
+            <param name="value">The error value</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="errors"/> is null.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="key"/> is null or whitespace.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is null or whitespace.</exception>
+        </member>
+        <member name="T:Drawbridge.WebApi.Logging.LoggingSetup">
+            <summary>
+            Helper class for setting up logging.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Logging.LoggingSetup.LogPath">
+            <summary>
+            The path used for log files.
+            </summary>
+            <returns>The log path value.</returns>
+        </member>
+        <member name="F:Drawbridge.WebApi.Logging.LoggingSetup.LogTemplate">
+            <summary>
+            The log message template.
+            </summary>
+            <returns>The log message template value.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Logging.LoggingSetup.InitializeLogger">
+            <summary>
+            Initializes the logger.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Logging.LoggingSetup.GetBytesForMB(System.Int64)">
+            <summary>
+            Gets the number of bytes from a MB value.
+            </summary>
+            <param name="value">The number of MB.</param>
+            <returns>The number of bytes.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware">
+            <summary>
+            Middleware to add additional request telemetry.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware"/> class.
+            </summary>
+            <param name="next">The next delegate.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,System.IServiceProvider,Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddleware})">
+            <summary>
+            Invokes the middleware.
+            </summary>
+            <param name="context">The http context.</param>
+            <param name="serviceProvider">The service provider used to get dependencies.</param>
+            <param name="logger">he logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddlewareExtensions">
+            <summary>
+            Extension methods for enabling <see cref="T:Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddlewareExtensions" /> middleware.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Middleware.AddAdditionalRequestTelemetryMiddlewareExtensions.UseRequestBodyLogging(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Sets up the middleware.
+            </summary>
+            <param name="app">The application builder.</param>
+            <returns>The modified application builder.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Middleware.EnableRequestBodyBufferingMiddleware">
+            <summary>
+            Enables request body buffering so we can inspect the request body.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Middleware.EnableRequestBodyBufferingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Middleware.EnableRequestBodyBufferingMiddleware"/> class.
+            </summary>
+            <param name="next">The next delegate.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Middleware.EnableRequestBodyBufferingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the middleware.
+            </summary>
+            <param name="context">The http context.</param>
+            <returns>A task that runs the invocation.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Middleware.EnableRequestBodyBufferingMiddlewareExtensions">
+            <summary>
+            Extension methods for enabling <see cref="T:Drawbridge.WebApi.Middleware.EnableRequestBodyBufferingMiddlewareExtensions" /> middleware.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Middleware.EnableRequestBodyBufferingMiddlewareExtensions.UseRequestBodyBuffering(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Sets up the middleware.
+            </summary>
+            <param name="app">The application builder.</param>
+            <returns>The modified application builder.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.ApplicationError">
+            <summary>
+            Model for application errors.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.ApplicationError.Code">
+            <summary>
+            Gets or sets the error code.
+            </summary>
+            <example>-1</example>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.ApplicationError.Message">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.ApplicationError.ToObjectResult">
+            <summary>
+            Gets the error as an object result.
+            </summary>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/></returns>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Drawbridge.WebApi.Models.ApplicationError.Code"/> is not negative.</exception>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.ApplicationError.ToObjectResult(System.Net.HttpStatusCode)">
+            <summary>
+            Gets the error as an object result.
+            </summary>
+            <param name="statusCode">The <see cref="T:System.Net.HttpStatusCode"/>.</param>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/></returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Authentication.AuthenticationMiddlewareException">
+            <summary>
+            Exception class for authentication errors.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.Authentication.AuthenticationMiddlewareException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Models.Authentication.AuthenticationMiddlewareException"/> class.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.Authentication.AuthenticationMiddlewareException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Models.Authentication.AuthenticationMiddlewareException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.Authentication.AuthenticationMiddlewareException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Models.Authentication.AuthenticationMiddlewareException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Authentication.ClientPortalUser">
+            <summary>
+            Model for a client portal user.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Authentication.ClientPortalUser.Username">
+            <summary>
+            Gets the user name.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Authentication.ClientPortalUser.AccountID">
+            <summary>
+            Gets or sets the account id.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Authentication.ClientPortalUser.VendorName">
+            <summary>
+            Gets or sets the vendor name (account/company name).
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Authentication.ClientPortalUser.IsAdmin">
+            <summary>
+            Gets or sets a value indicating whether or not the user is an admin.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Authentication.ClientPortalUser.PrimaryRole">
+            <summary>
+            Gets or sets the user's primary role.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Authentication.ClientPortalUser.PrimaryOrgID">
+            <summary>
+            Gets or sets the user's primary organization id.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Authentication.ClientPortalUser.ActiveOrgID">
+            <summary>
+            Gets or sets the current organization id the user is assigned to
+            (handles admin impersonation).
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Authentication.ClientPortalUser.IsDrawbridgeAdminOrgMember">
+            <summary>
+            Gets or sets a value indicating whether or not the user is the drawbridge admin organization.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Authentication.DrawbridgeClaimTypes">
+            <summary>
+            Claim type constants.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Authentication.DrawbridgeClaimTypes.Username">
+            <summary>
+            The user name claim.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Authentication.DrawbridgeClaimTypes.AccountID">
+            <summary>
+            The claim name for the AccountID.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Authentication.DrawbridgeClaimTypes.VendorName">
+            <summary>
+            The claim name for VendorName.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Authentication.DrawbridgeClaimTypes.IsAdmin">
+            <summary>
+            The claim name for IsAdmin.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Authentication.DrawbridgeClaimTypes.PrimaryRole">
+            <summary>
+            The claim name for PrimaryRole.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Authentication.DrawbridgeClaimTypes.PrimaryOrgID">
+            <summary>
+            The claim name for PrimaryOrgID.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Authentication.DrawbridgeClaimTypes.ActiveOrgID">
+            <summary>
+            The claim name for PrimaryOrgID.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.CommonResponses">
+            <summary>
+            Action results for common responses.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.CommonResponses.InternalServerError(System.Nullable{System.Int32},Drawbridge.WebApi.Models.ErrorDetails)">
+            <summary>
+            Internal Server Error.
+            </summary>
+            <param name="code">The error code</param>
+            <param name="errorDetails">The error details.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/> with status code 500.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="code"/> is not negative.</exception>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.CommonResponses.NotFound">
+            <summary>
+            Not Found Error.
+            </summary>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/> with status code 404.</returns>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.CommonResponses.BadRequest(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.ICollection{System.String}})">
+            <summary>
+            Bad Request Error (validation error).
+            </summary>
+            <param name="errors">The validation errors dictionary.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/> with status code 400.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="errors"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.CommonResponses.Error(System.Net.HttpStatusCode,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Generic error.
+            </summary>
+            <param name="statusCode">The status code.</param>
+            <param name="code">The error code.</param>
+            <param name="message">The error message.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/> with the supplied status code.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Configuration.DrawbridgeAuthenticationConfiguration">
+            <summary>
+            Model for DrawbridgeAuthenticationConfiguration.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Configuration.DrawbridgeAuthenticationConfiguration.UserInfoUrl">
+            <summary>
+            Gets or sets the base url for the authserv api.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Configuration.DrawbridgeAuthenticationConfiguration.ApiToken">
+            <summary>
+            Gets or sets the base url for the authserv api.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.Configuration.DrawbridgeAuthenticationConfiguration.Validate">
+            <summary>
+            Validates the properties.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Constants">
+            <summary>
+            Constants for WebApi configuration.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.AllowedOrigins">
+            <summary>
+            AllowedOrigins constant.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.DefaultApplicationsInsightConnectionString">
+            <summary>
+            Default ApplicationInsights connection string.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.SchemasFolderName">
+            <summary>
+            JSON Schemas folder name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.AspNetCoreEnvironmentVariable">
+            <summary>
+            The ASPNETCORE_ENVIRONMENT variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.Authorization">
+            <summary>
+            Authorization constant.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.Bearer">
+            <summary>
+            Bearer constant.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.DBEnvEnvironmentVariable">
+            <summary>
+            The DB_ENV variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.DefaultDBEnv">
+            <summary>
+            The default DB_ENV value
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.IntegrationDBEnv">
+            <summary>
+            The integration DB_ENV value
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.AppNameEnvironmentVariable">
+            <summary>
+            The APP_NAME variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.DefaultAzureTenantID">
+            <summary>
+            The default azure tenant id
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.AzureAppConfigurationUriEnvironmentVariable">
+            <summary>
+            The AZURE_APP_CONFIGURATION_URI environment variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.AzureKeyVaultSharedUriEnvironmentVariable">
+            <summary>
+            The AZURE_KEY_VAULT_SHARED_URI environment variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.AzureKeyVaultAppUriEnvironmentVariable">
+            <summary>
+            The AZURE_KEY_VAULT_APP_URI environment variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.WebsiteSiteNameEnvironmentVariable">
+            <summary>
+            The WEBSITE_SITE_NAME environment variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.OverrideConfigFileName">
+            <summary>
+            The override config file name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.RoutingPathEnvironmentVariable">
+            <summary>
+            The ROUTING_PATH variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.HostBaseUrlEnvironmentVariable">
+            <summary>
+            The HOST_BASE_URL variable name.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Constants.LogToFileEnvironmentVariable">
+            <summary>
+            The LOG_TO_FILE variable name.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.DevelopmentError">
+            <summary>
+            Model for application errors when in Development environment.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.DevelopmentError.#ctor(Drawbridge.WebApi.Models.ErrorDetails)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Models.DevelopmentError"/> class.
+            </summary>
+            <param name="details">The error details.</param>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.DevelopmentError.Details">
+            <summary>
+            Gets the error details.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.DevelopmentError.ToObjectResult">
+            <summary>
+            Gets the error as an object result.
+            </summary>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/></returns>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Drawbridge.WebApi.Models.ApplicationError.Code"/> is not negative.</exception>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.ErrorConstants">
+            <summary>
+            Constants for application errors.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.ErrorConstants.DefaultInternalServerErrorCode">
+            <summary>
+            Internal Server Error code.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.ErrorConstants.InternalServerErrorMessage">
+            <summary>
+            Internal Server Error message.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.ErrorConstants.ValidationErrorMessage">
+            <summary>
+            Validation Error message.
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.ErrorConstants.NotFoundErrorMessage">
+            <summary>
+            Not Found Error message.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.ErrorDetails">
+            <summary>
+            Model for error details.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.ErrorDetails.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.ErrorDetails.StackTrace">
+            <summary>
+            Gets or sets the stack trace.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.ErrorDetails.FullDetails">
+            <summary>
+            Gets or sets the full details of the error <see cref="M:System.Exception.ToString" />.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Headers">
+            <summary>
+            Constants for headers
+            </summary>
+        </member>
+        <member name="F:Drawbridge.WebApi.Models.Headers.ContentDisposition">
+            <summary>
+            The content disposition
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.HealthReportExtended">
+            <summary>
+            Extends health report with additional properties.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.HealthReportExtended.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Models.HealthReportExtended"/> class.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.HealthReportExtended.#ctor(Microsoft.Extensions.Diagnostics.HealthChecks.HealthReport)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Models.HealthReportExtended"/> class.
+            </summary>
+            <param name="report">The source health report</param>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.HealthReportExtended.Entries">
+            <summary>
+            Gets the health report entries.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.HealthReportExtended.Status">
+            <summary>
+            Gets the health report overall status.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.HealthReportExtended.TotalDuration">
+            <summary>
+            Gets the health report overall status.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.HealthReportExtended.VersionNumber">
+            <summary>
+            Gets the application version number.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.HealthReportExtended.BuildDate">
+            <summary>
+            Gets the application build date.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.JsonSchemaException">
+            <summary>
+            Json schema exception used with <see cref="T:Drawbridge.WebApi.Filters.JsonSchemaValidationFilter"/>
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.JsonSchemaException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Models.JsonSchemaException"/> class.
+            </summary>
+            <param name="message">The message</param>
+            <param name="innerException">The inner exception</param>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.NotFoundError">
+            <summary>
+            Model for not found errors.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.NotFoundError.ToObjectResult">
+            <summary>
+            Gets the error as an object result.
+            </summary>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/></returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Request.AuthServLoginInfoRequest">
+            <summary>
+            Model for AuthServLoginInfoRequest.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Request.AuthServLoginInfoRequest.UserToken">
+            <summary>
+            Gets or sets the UserToken.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Request.EntityFilter">
+            <summary>
+            Interface for entity filters
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.Request.EntityFilter.IsValid(FluentValidation.Results.ValidationResult,Drawbridge.WebApi.Models.ValidationError@)">
+            <summary>
+            Checks whether or not validation passed and outputs the error collection if so
+            </summary>
+            <param name="result">The validation result</param>
+            <param name="error">The validation error to output</param>
+            <returns>A value indicating whether or not the filter is valid</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Response.AuthServLoginInfoResponse">
+            <summary>
+            Model for AuthServLoginInfoResponse.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Response.AuthServLoginInfoResponse.Result">
+            <summary>
+            Gets or sets the Result.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.Response.UserInfo">
+            <summary>
+            Model for UserInfo
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Response.UserInfo.Username">
+            <summary>
+            Gets or sets the Username.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Response.UserInfo.AccountID">
+            <summary>
+            Gets or sets the AccountID.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Response.UserInfo.ActiveOrgName">
+            <summary>
+            Gets or sets the ActiveOrgName.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Response.UserInfo.Admin">
+            <summary>
+            Gets or sets a value indicating whether the user is admin.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Response.UserInfo.PrimaryRole">
+            <summary>
+            Gets or sets the PrimaryRole.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Response.UserInfo.PrimaryOrgID">
+            <summary>
+            Gets or sets the PrimaryOrgID.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.Response.UserInfo.ActiveOrgID">
+            <summary>
+            Gets or sets the ActiveOrgID.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Models.ValidationError">
+            <summary>
+            Model for validation errors.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.ValidationError.#ctor(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.ICollection{System.String}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Models.ValidationError"/> class.
+            </summary>
+            <param name="errors">The dictionary of errors.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="errors"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="P:Drawbridge.WebApi.Models.ValidationError.Errors">
+            <summary>
+            Gets the dictionary of errors
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Models.ValidationError.ToObjectResult">
+            <summary>
+            Gets the error as an object result.
+            </summary>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.ObjectResult"/></returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Services.ApiTokenService">
+            <summary>
+            Implementation class for IApiTokenService.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Services.ApiTokenService.#ctor(Microsoft.Extensions.Options.IOptions{Drawbridge.WebApi.Models.Configuration.DrawbridgeAuthenticationConfiguration})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Services.ApiTokenService"/> class.
+            </summary>
+            <param name="authenticationOptions">The authenticationOptions.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Services.ApiTokenService.GetApiToken">
+            <inheritdoc/>
+        </member>
+        <member name="T:Drawbridge.WebApi.Services.DbAuthServHealthCheck">
+            <summary>
+            Health check for database connectivity.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Services.DbAuthServHealthCheck.#ctor(Microsoft.Extensions.Options.IOptions{Drawbridge.WebApi.Models.Configuration.DrawbridgeAuthenticationConfiguration},System.Net.Http.IHttpClientFactory,Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Services.DbAuthServHealthCheck})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Services.DbAuthServHealthCheck"/> class.
+            </summary>
+            <param name="drawbridgeAuthenticationConfiguration">The drawbridge authentication configuration.</param>
+            <param name="httpClientFactory">The http client factory</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="P:Drawbridge.WebApi.Services.DbAuthServHealthCheck.FullResponseKey">
+            <summary>
+            Gets the full response key
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Services.DbAuthServHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)">
+            <summary>
+            Performs the health check.
+            </summary>
+            <param name="context">The health check context.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>A task that returns the health check result when executed.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Services.IApiTokenService">
+            <summary>
+            Interface for ApiTokenService.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Services.IApiTokenService.GetApiToken">
+            <summary>
+            Gets the ApiToken from the Azure KV.
+            </summary>
+            <returns>Task with ApiToken.</returns>
+        </member>
+        <member name="T:Drawbridge.WebApi.Swagger.JsonSchemaOperationFilter">
+            <summary>
+            A filter to add json schema information to operations
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Swagger.JsonSchemaOperationFilter.#ctor(Microsoft.Extensions.Logging.ILogger{Drawbridge.WebApi.Swagger.JsonSchemaOperationFilter})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Swagger.JsonSchemaOperationFilter"/> class.
+            </summary>
+            <param name="logger">The logger</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Swagger.JsonSchemaOperationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Drawbridge.WebApi.Swagger.LowerCaseDocumentFilter">
+            <summary>
+            Configures lowercase casing for route names.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Swagger.LowerCaseDocumentFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Applies the configuration to the swagger document.
+            </summary>
+            <param name="swaggerDoc">The swagger document.</param>
+            <param name="context">The filter context.</param>
+        </member>
+        <member name="T:Drawbridge.WebApi.Telemetry.CloudRoleNameTelemetryInitializer">
+            <summary>
+            Sets the application name (cloud role name) in Application Insights.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Telemetry.CloudRoleNameTelemetryInitializer.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Drawbridge.WebApi.Telemetry.CloudRoleNameTelemetryInitializer"/> class.
+            </summary>
+            <param name="applicationName">The Drawbridge Web Application name.</param>
+        </member>
+        <member name="M:Drawbridge.WebApi.Telemetry.CloudRoleNameTelemetryInitializer.Initialize(Microsoft.ApplicationInsights.Channel.ITelemetry)">
+            <summary>
+            Sets the cloud role name.
+            </summary>
+            <param name="telemetry">The telemetry object.</param>
+        </member>
+        <member name="T:Drawbridge.WebApi.Telemetry.ExcludeFromTelemetryAttribute">
+            <summary>
+            Marker attribute for excluding properties from telemetry.
+            </summary>
+        </member>
+        <member name="T:Drawbridge.WebApi.Telemetry.ExcludeFromTelemetryConverter">
+            <summary>
+            Json.Net converter for properties marked with the [ExcludeFromTelemetry] attribute.
+            </summary>
+        </member>
+        <member name="P:Drawbridge.WebApi.Telemetry.ExcludeFromTelemetryConverter.CanRead">
+            <inheritdoc/>
+        </member>
+        <member name="M:Drawbridge.WebApi.Telemetry.ExcludeFromTelemetryConverter.CanConvert(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Drawbridge.WebApi.Telemetry.ExcludeFromTelemetryConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Drawbridge.WebApi.Telemetry.ExcludeFromTelemetryConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Drawbridge.WebApi.Telemetry.TelemetryContractResolver">
+            <summary>
+            Json.Net contract resolver for objects that are written to telemetry.
+            </summary>
+        </member>
+        <member name="M:Drawbridge.WebApi.Telemetry.TelemetryContractResolver.CreateProperty(System.Reflection.MemberInfo,Newtonsoft.Json.MemberSerialization)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

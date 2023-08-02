@@ -1,0 +1,13 @@
+{
+    "omnisharp.enableRoslynAnalyzers": true,
+    "omnisharp.enableEditorConfigSupport": true,
+    "docomment.advanced": {
+        "cs": {
+            "property": {
+                "attributes": [
+                    "summary"
+                ]
+            }
+        }
+    }
+}
